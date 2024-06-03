@@ -2,6 +2,7 @@
 class Food extends Product {
     private int $weight;
     private string $expirationDate;
+    private string $type;
 
     public function __construct(string $_name, float $_price, int $_weight, string $_expirationDate)
     {
@@ -9,6 +10,7 @@ class Food extends Product {
 
         $this->setWeight($_weight);
         $this->setExpirationDate($_expirationDate);
+        $this->type = "Cibo";
     }
 
     /**
@@ -56,6 +58,14 @@ class Food extends Product {
         
     }
 
+    }
+
+    /**
+     * Get the value of type
+     */ 
+    public function getType()
+    {
+        return $this->type;
     }
 }
 ?>

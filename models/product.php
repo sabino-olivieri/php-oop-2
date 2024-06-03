@@ -20,6 +20,14 @@ class Product
         $this->setPrice($_price);
     }
 
+    
+    /**
+     * Get the value of name
+     */ 
+    public function getName()
+    {
+        return $this->name;
+    }
 
     /**
      * Get the value of description
@@ -98,4 +106,5 @@ class Product
         $this->category = $_category;
 
     }
+
 }
