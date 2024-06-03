@@ -12,7 +12,7 @@ class Product
     public function __construct(string $_name, float $_price)
     {
         if (strlen(trim($_name)) > 3) {
-            $this->name = trim($_name);
+            $this->name = ucfirst(trim($_name));
         } else {
             throw new Exception("Il campo 'NOME' deve avere almeno 4 caratteri", 1);
         }

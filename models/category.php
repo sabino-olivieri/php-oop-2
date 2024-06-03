@@ -15,5 +15,13 @@
                 
             }
         }
+
+        /**
+         * Get the value of name
+         */ 
+        public function getName()
+        {
+                return $this->name;
+        }
     }
 ?>
