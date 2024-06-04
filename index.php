@@ -2,6 +2,7 @@
 
 require_once __DIR__ . "/models/product.php";
 require_once __DIR__ . "/models/category.php";
+require_once __DIR__ . "/traits/weigthable.php";
 require_once __DIR__ . "/models/type_product/food.php";
 require_once __DIR__ . "/models/type_product/toy.php";
 require_once __DIR__ . "/models/type_product/kennel.php";
@@ -51,6 +52,7 @@ $cuccia_cane = new Kennel("Cuccia a 5 stelle", 149.90, "150x20x50");
 $cuccia_cane->setDescription("Il vostro cane si entirà un re");
 $cuccia_cane->setImagePath("https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTKJYlQcBk98Ycrl7zoiJ1zRXmP_bJ0RyQ_ZqDq4ho8pBu6Nev-3eBzMNUKp7Wvl837s_bLKElFZCXr0cizdM6aj_WicQANXdr-LYTVdWv91QIfejdVMOUN");
 $cuccia_cane->setCategory($dog_category);
+$cuccia_cane->setWeight(5000);
 
 $catalog[] = $croccantini;
 $catalog[] = $topo_giocattolo;
@@ -103,6 +105,7 @@ $catalog[] = $cuccia_cane;
                 <?php }
                 if (($cur_prod->getType() === "Cuccia")) { ?>
                     <span>Dimensioni: <?php echo $cur_prod->getDimension() ?></span>
+                    <span>Peso: <?php echo $cur_prod->getWeight() / 1000 . " kg"  ?></span>
 
                 <?php } ?>
 

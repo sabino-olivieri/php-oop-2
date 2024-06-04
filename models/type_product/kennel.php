@@ -1,5 +1,6 @@
 <?php 
 class Kennel extends Product {
+    use Weightable;
     private string $dimension;
     private string $type;
 
