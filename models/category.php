@@ -11,7 +11,7 @@
             if($_name === "Cane" || $_name === "Gatto"){
                 $this->name = $_name;
             } else {
-                throw new Exception("La categoria può essere solo 'CANE' o 'GATTO'", 1);
+                throw new Exception("La categoria può essere solo 'CANE' o 'GATTO'");
                 
             }
         }

@@ -1,16 +1,43 @@
 <?php
+
 require_once __DIR__ . "/models/product.php";
 require_once __DIR__ . "/models/category.php";
 require_once __DIR__ . "/models/type_product/food.php";
 require_once __DIR__ . "/models/type_product/toy.php";
 require_once __DIR__ . "/models/type_product/kennel.php";
 
-$dog_category = new Category("cane");
-$cat_category = new Category("gatto");
+try {
+    $dog_category = new Category("aa");
 
-$croccantini = new Food("croccantini", 10.5, 500, "2024/10/5");
+} catch (Exception $e) {
+    $dog_category = new Category("cane");
+    echo "Error: " . $e->getMessage() . "<br>";
+}
 
-$croccantini->setDescription("croccantini molto buoni");
+try {
+    $cat_category = new Category("aa");
+
+} catch (Exception $e) {
+    $cat_category = new Category("gatto");
+    echo "Error: " . $e->getMessage() . "<br>";
+}
+
+
+
+try {
+    $croccantini = new Food("croccantini", 10.5, 500, "2024/10/5");
+
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+try {
+
+    $croccantini->setDescription("croccantini molto buoni");
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+
 $croccantini->setImagePath("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiN9TMEBqOaw8M2KqbOLwEQh6-xxMHnIPofQ&s");
 $croccantini->setCategory($dog_category);
 

@@ -46,7 +46,7 @@ class Product
 
             $this->description = ucfirst(trim($_description));
         } else {
-            throw new Exception("Il campo 'DESCRIZIONE' deve avere almeno 4 caratteri", 1);
+            throw new Exception("Il campo 'DESCRIZIONE' deve avere almeno 4 caratteri");
         }
     }
 
@@ -66,7 +66,7 @@ class Product
         if ($_price > 0) {
             $this->price = $_price;
         } else {
-            throw new Exception("Il campo 'PREZZO' deve essere superiore a 0", 1);
+            throw new Exception("Il campo 'PREZZO' deve essere superiore a 0");
         }
     }
 
@@ -86,7 +86,7 @@ class Product
         if(strlen(trim($_imagePath)) > 3) {
             $this->imagePath = $_imagePath;
         } else {
-            throw new Exception("Il percorso dell'immagine non è corretto", 1);
+            throw new Exception("Il percorso dell'immagine non è corretto");
         }
     }
 
